@@ -1,0 +1,77 @@
+.App {
+  text-align: center;
+  position: relative;
+}
+
+.headerList {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: darkslateblue;
+}
+.hItem {
+  float: left;
+  font-weight: bold;
+  font-size: 18px;
+  color: white;
+  text-align: center;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  width: 33%;
+}
+.hItem a:hover {
+  background-color: lightseagreen;
+}
+.hItem a {
+  color: white;
+}
+
+.App-header {
+  background-color: lightsteelblue;
+  color: black;
+  min-height: 200px;
+  padding: 50px;
+  text-align: center;
+  background-image: url(https://ak4.picdn.net/shutterstock/videos/1938364/thumb/1.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.game {
+  background-color: white;
+  min-height: 600px;
+  padding-bottom: 100px;
+}
+.gameArea {
+  margin-left: 150px;
+  margin-right: 100px;
+}
+.image {
+  width: 250px;
+  height: 250px;
+  overflow: hidden;
+  object-fit: cover;
+  margin: 10px 20px 10px 20px;
+}
+.image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 14px 28px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.22);
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  background: darkgoldenrod;
+  height: 100px;
+}
+.bottom {
+  position: absolute;
+  bottom: 0;
+  background-color: darkslateblue;
+  padding: 10px;
+  font-weight: bold;
+  width: 100%;
+}
