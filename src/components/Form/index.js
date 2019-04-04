@@ -80,7 +80,37 @@ class Form extends Component {
   }
 
   componentDidMount() {
-    this.randomizeImages();
+    this.randomizeImages(-1);
+  }
+
+  checkScore = (i) => {
+    let urls = [...this.state.urls];
+    let newUrls = urls;
+
+    if (i != -1) {
+
+      if (urls[i].clicked) {
+
+        for (var i = 0; i < newUrls.length; i++) {
+          newUrls[i].clicked = false;
+        }
+
+        alert("Game Over. Score: "+this.state.score);
+        this.setState({
+          score: 0,
+          urls: newUrls
+        });
+        //newUrls[i].clicked = true;
+        console.log("Game over - Score reset to:" + this.state.score);
+      } else {
+        this.setState({
+          score: this.state.score + 1,
+          urls: newUrls
+        });
+        console.log(i +" hit, with a score of: "+this.state.score);
+        newUrls[i].clicked = true;
+      }
+    }
   }
 
   randomizeImages = id => {
@@ -99,9 +129,9 @@ class Form extends Component {
       tempArrayTwo.push(tempArray[rand].url);
       tempArray.pop(rand); 
     }
+    this.checkScore(id);
     this.setState({
-      randoURLs: tempArrayTwo,
-
+      randoURLs: tempArrayTwo
     });
   }
 
@@ -148,7 +178,7 @@ class Form extends Component {
           {this.state.randoURLs.map((image, i) => {
             console.log("added");
             return (
-              <img onClick={() => this.randomizeImages(i)} className="image" src={image}>
+              <img onClick={() => this.randomizeImages(i)} id={"i"+i} className="image" src={image}>
               </img>
             )
           })}
